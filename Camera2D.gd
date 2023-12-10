@@ -1,11 +1,16 @@
 extends Camera2D
 
+@onready var character_body_2d = $"../AnimatedSprite2D"
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+# Camera settings
+var zoomSpeed = 1.1
+var maxZoom = 3.0
+var translationSpeed = 300.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	# Calculate the zoom
+	
+	enabled = true
+	
+		
