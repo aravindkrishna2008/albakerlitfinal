@@ -19,6 +19,9 @@ func _process(delta):
 		lastKey = true
 	if (position.y > 1200):
 		get_tree().reload_current_scene()
+		
+	if (velocity.y > 0):
+		character.animation = "fall"
 	character.flip_h = lastKey;
 
 func _physics_process(delta):
