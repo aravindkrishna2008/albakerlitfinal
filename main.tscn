@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjcskh8rx7r4e"]
+[gd_scene load_steps=13 format=3 uid="uid://bjcskh8rx7r4e"]
 
 [ext_resource type="Texture2D" uid="uid://dpabnqlc8ijng" path="res://Final/Assets/Assets.png" id="1_6lug6"]
 [ext_resource type="Texture2D" uid="uid://qsgy8xp1umy3" path="res://16x32 trees.png" id="2_ei3pr"]
 [ext_resource type="PackedScene" uid="uid://nltxngfb5amk" path="res://amir.tscn" id="2_ss0n8"]
 [ext_resource type="Texture2D" uid="uid://ct3h6i4oul05p" path="res://48x48 trees.png" id="3_irrq3"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_8f8uw"]
+[ext_resource type="Texture2D" uid="uid://cmpw280mbecmn" path="res://Ellipse 1.png" id="6_2gagi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vlhgf"]
 texture = ExtResource("1_6lug6")
@@ -857,6 +858,10 @@ sources/2 = SubResource("TileSetAtlasSource_qqofw")
 
 [node name="Node" type="Node"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+scale = Vector2(2, 2)
+color = Color(0.168627, 0.168627, 0.168627, 1)
+
 [node name="Background" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
@@ -875,8 +880,16 @@ layer_0/tile_data = PackedInt32Array(1245185, 393216, 1, 1245186, 655360, 7, 124
 position = Vector2(42, 30)
 disable_mode = 1
 
+[node name="PointLight2D2" type="PointLight2D" parent="CharacterBody2D"]
+color = Color(0.811765, 0.792157, 0.545098, 1)
+energy = 1.78
+shadow_enabled = true
+shadow_color = Color(0.243137, 0.243137, 0.243137, 0.701961)
+shadow_filter = 1
+texture = ExtResource("6_2gagi")
+texture_scale = 0.43
+
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-visible = false
 ignore_rotation = false
 enabled = false
 zoom = Vector2(3, 3)
