@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://nltxngfb5amk"]
+[gd_scene load_steps=16 format=3 uid="uid://nltxngfb5amk"]
 
 [ext_resource type="Texture2D" uid="uid://bseahkvp75cod" path="res://Final/Assets/playerRight/Idle 1.png" id="1_lulek"]
 [ext_resource type="Script" path="res://amir.gd" id="1_v2kku"]
+[ext_resource type="Texture2D" uid="uid://bajyal3xd38gq" path="res://Final/Character/Crouch.png" id="2_p6vn3"]
 [ext_resource type="Texture2D" uid="uid://d3l1f2u1x23l2" path="res://Final/Assets/playerRight/Run 2.png" id="2_w315t"]
 [ext_resource type="Texture2D" uid="uid://cvuytpyibv7wx" path="res://Final/Assets/playerRight/Prepare 1.png" id="3_k1fof"]
 [ext_resource type="Texture2D" uid="uid://bpw0n4g2fb866" path="res://Final/Assets/playerRight/Run 3.png" id="3_vyh50"]
@@ -30,6 +31,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x8qc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p6vn3")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4sds")
@@ -74,7 +83,7 @@ script = ExtResource("1_v2kku")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3x8qc")
-animation = &"prep"
+animation = &"crouch"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
