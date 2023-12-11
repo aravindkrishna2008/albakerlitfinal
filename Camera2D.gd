@@ -9,7 +9,14 @@ var translationSpeed = 300.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Calculate the zoom
+	if Input.is_action_pressed("ui_text_submit"):
+		zoom.x = 1;
+		zoom.y = 1
+		position_smoothing_speed = 1;
+	if Input.is_action_just_released("ui_text_submit"):
+		zoom.x = 3;
+		zoom.y =3
+		position_smoothing_speed = 4;
 	
 	enabled = true
 	

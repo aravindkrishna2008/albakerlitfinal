@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjcskh8rx7r4e"]
+[gd_scene load_steps=3 format=3 uid="uid://bjcskh8rx7r4e"]
 
 [ext_resource type="PackedScene" uid="uid://5kbyw3bonqoc" path="res://level_1.tscn" id="1_0pyd0"]
+[ext_resource type="Texture2D" uid="uid://cmpw280mbecmn" path="res://Ellipse 1.png" id="2_v4dsl"]
 
 [node name="Node" type="Node"]
 
@@ -9,3 +10,15 @@ scale = Vector2(2, 2)
 color = Color(0.168627, 0.168627, 0.168627, 1)
 
 [node name="Level1" parent="." instance=ExtResource("1_0pyd0")]
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(2924.55, -889.45)
+scale = Vector2(3.49642, 2.81664)
+color = Color(0.811765, 0.792157, 0.545098, 1)
+energy = 1.78
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0.701961)
+shadow_filter = 2
+shadow_filter_smooth = 64.0
+texture = ExtResource("2_v4dsl")
+texture_scale = 0.43
