@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://nltxngfb5amk"]
+[gd_scene load_steps=16 format=3 uid="uid://nltxngfb5amk"]
 
 [ext_resource type="Texture2D" uid="uid://bseahkvp75cod" path="res://Final/Assets/playerRight/Idle 1.png" id="1_lulek"]
 [ext_resource type="Script" path="res://amir.gd" id="1_v2kku"]
+[ext_resource type="Texture2D" uid="uid://ur1irm3r04kw" path="res://Crouch 1.png" id="2_0mkx8"]
 [ext_resource type="Texture2D" uid="uid://dd5f5trlif06k" path="res://Final/Assets/playerRight 2/Fall 2.png" id="3_3htdg"]
+[ext_resource type="Texture2D" uid="uid://bfflu8kqr7sq7" path="res://Crouch 2.png" id="3_lsk7a"]
 [ext_resource type="Texture2D" uid="uid://bq27x782xwojj" path="res://Final/Assets/playerRight 2/Jump 1.png" id="3_p7qsv"]
 [ext_resource type="Texture2D" uid="uid://bu7tg21vndpi0" path="res://Final/Assets/playerRight 2/Prepare 1.png" id="4_kyp6l"]
 [ext_resource type="Texture2D" uid="uid://duqlvkbrcm47u" path="res://Final/Assets/playerRight 2/Run 1.png" id="4_p1m1a"]
+[ext_resource type="Texture2D" uid="uid://bx2p7fnufyn8y" path="res://Idle 2 (4).png" id="5_fpp5v"]
 [ext_resource type="Texture2D" uid="uid://e24o3kjsuj50" path="res://Final/Assets/playerRight 2/Run 2.png" id="5_qn7o1"]
 [ext_resource type="Texture2D" uid="uid://cqp35txeiyvnj" path="res://Final/Assets/playerRight 2/Run 3.png" id="6_c8grd"]
 [ext_resource type="Texture2D" uid="uid://31xsxcg0uco8" path="res://Final/Assets/playerRight 2/Run 4.png" id="7_hvwf4"]
@@ -18,11 +21,25 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_0mkx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lsk7a")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i4sds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fpp5v")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,13 +88,11 @@ size = Vector2(24, 26.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-collision_layer = 2
 script = ExtResource("1_v2kku")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3x8qc")
-animation = &"fall"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
