@@ -10,7 +10,7 @@ var crouch = false
 func _process(delta):
 	if phase == 0:
 		card.animation = "default"
-	print(get_overlapping_bodies(), get_overlapping_areas())
+	#print(get_overlapping_bodies())
 	if len(get_overlapping_bodies()) > 0 and Input.is_action_just_pressed("ui_down") and phase == 0:
 		PlayerVariables.hasKite = true
 		card.animation = "text1"

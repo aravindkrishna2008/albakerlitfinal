@@ -77,11 +77,12 @@ func _physics_process(delta):
 			else:
 				velocity.y = JUMP_VELOCITY
 			jumpedCount +=1
-		
-		
-
-		
+		#elif (position.y >= 600 and Input.is_action_just_pressed("ui_up")):
+			#velocity.y = JUMP_VELOCITY / 2
+			#jumpedCount = 0
 
 		move_and_slide()
+		PlayerVariables.PlayerX = position.x
+		PlayerVariables.PlayerY = position.y
 	else:
 		character.animation = "default"

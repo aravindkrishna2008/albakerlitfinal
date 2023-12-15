@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqwvw81mwpcob"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_qaebr"]
+[ext_resource type="Texture2D" uid="uid://dipxwwy6x2jh5" path="res://default card.png" id="2_qmkt0"]
+[ext_resource type="Texture2D" uid="uid://cr42uwsjmvuck" path="res://text card (2).png" id="3_8rrsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es07k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7t14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qmkt0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8rrsq")
+}],
+"loop": true,
+"name": &"text1",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(225, 308)
+script = ExtResource("1_qaebr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_es07k")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.333, 0.333)
+sprite_frames = SubResource("SpriteFrames_w7t14")

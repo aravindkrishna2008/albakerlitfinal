@@ -1,35 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjcskh8rx7r4e"]
+[gd_scene load_steps=3 format=3 uid="uid://bjcskh8rx7r4e"]
 
 [ext_resource type="PackedScene" uid="uid://5kbyw3bonqoc" path="res://level_1.tscn" id="1_0pyd0"]
 [ext_resource type="Texture2D" uid="uid://cmpw280mbecmn" path="res://Ellipse 1.png" id="2_v4dsl"]
-[ext_resource type="Script" path="res://Area2D.gd" id="3_p26x1"]
-[ext_resource type="Texture2D" uid="uid://dipxwwy6x2jh5" path="res://default card.png" id="4_b65j2"]
-[ext_resource type="Texture2D" uid="uid://cr42uwsjmvuck" path="res://text card (2).png" id="5_u1qmj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkx6e"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wq5hk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_b65j2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_u1qmj")
-}],
-"loop": true,
-"name": &"text1",
-"speed": 5.0
-}]
 
 [node name="Node" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 scale = Vector2(2, 2)
 color = Color(0.168627, 0.168627, 0.168627, 1)
 
@@ -47,16 +24,3 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 texture = ExtResource("2_v4dsl")
 texture_scale = 0.43
-
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_p26x1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(372, 640)
-shape = SubResource("RectangleShape2D_dkx6e")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(372, 639)
-scale = Vector2(0.333, 0.333)
-sprite_frames = SubResource("SpriteFrames_wq5hk")
