@@ -6,7 +6,6 @@
 [node name="Node" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 scale = Vector2(2, 2)
 color = Color(0.168627, 0.168627, 0.168627, 1)
 

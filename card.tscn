@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://8bccbmx375e4"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_h33wn"]
+[ext_resource type="Texture2D" uid="uid://cmpw280mbecmn" path="res://Ellipse 1.png" id="2_1r52o"]
+[ext_resource type="Texture2D" uid="uid://bpplxwik1da1" path="res://card/cardSpin/1.png" id="2_exg7k"]
+[ext_resource type="Texture2D" uid="uid://cikoaylys5o5q" path="res://card/cardSpin/2.png" id="3_yaq1e"]
+[ext_resource type="Texture2D" uid="uid://ba4vymwcu8k42" path="res://card/cardSpin/3.png" id="4_knfvr"]
+[ext_resource type="Texture2D" uid="uid://2x183i435f0w" path="res://card/cardSpin/4.png" id="5_c6rph"]
+[ext_resource type="Texture2D" uid="uid://c0k1shcrrlwec" path="res://card/cardSpin/5.png" id="6_eh5gj"]
+[ext_resource type="Texture2D" uid="uid://b3pb2q6xxm73e" path="res://card/cardSpin/6.png" id="7_4scoc"]
+[ext_resource type="Texture2D" uid="uid://cj08nmdll7v84" path="res://card/still1.png" id="9_arejo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai6jl"]
+size = Vector2(31, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84l5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_exg7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yaq1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_knfvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c6rph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eh5gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4scoc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_arejo")
+}],
+"loop": true,
+"name": &"text1",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(-136, -328)
+script = ExtResource("1_h33wn")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(372.5, 641)
+texture = ExtResource("2_1r52o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(372.5, 641)
+shape = SubResource("RectangleShape2D_ai6jl")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(372, 639)
+sprite_frames = SubResource("SpriteFrames_84l5t")
+animation = &"text1"
+autoplay = "default"
