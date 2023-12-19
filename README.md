@@ -2,7 +2,7 @@
 Thanks Khio for helping with game dev and Lusi for creating assets. And all the others that helped play test it.
 
 # Assets
-Sprites + Cards: Handrawn Artwork
+Sprites + Cards: Handrawn Artwork \n
 Terrain: https://anokolisa.itch.io/pocket-pack-black-temple
 
 
